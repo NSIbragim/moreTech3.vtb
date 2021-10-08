@@ -8,4 +8,7 @@ target 'moreTechApp' do
   pod 'SwiftLint'
   pod 'SnapKit'
 
+  # Тестим
+  pod "Player", "~> 0.13.2"
+
 end

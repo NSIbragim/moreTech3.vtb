@@ -13,14 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        Раскомментить при удалении main-сториборда
-        guard let _ = (scene as? UIWindowScene) else { return }
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//        window?.windowScene = windowScene
-//        window?.rootViewController = ViewController()
-//        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

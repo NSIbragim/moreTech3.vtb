@@ -7,9 +7,7 @@
 
 import UIKit
 
-// Расскомментить вместо @main для удаления Main-сториборда
-//@UIApplicationMain
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
