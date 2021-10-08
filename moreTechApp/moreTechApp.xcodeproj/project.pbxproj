@@ -13,9 +13,12 @@
 		7DC0B92A27107AFC0081C091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0B92827107AFC0081C091 /* Main.storyboard */; };
 		7DC0B92C27107AFD0081C091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0B92B27107AFD0081C091 /* Assets.xcassets */; };
 		7DC0B92F27107AFD0081C091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0B92D27107AFD0081C091 /* LaunchScreen.storyboard */; };
+		E18EF1B40D5CFC44B15BD2D2 /* Pods_moreTechApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moreTechApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.debug.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7DC0B91F27107AFC0081C091 /* moreTechApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTechApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC0B92227107AFC0081C091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC0B92427107AFC0081C091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		7DC0B92B27107AFD0081C091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DC0B92E27107AFD0081C091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC0B93027107AFD0081C091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97829E98C464C4B7C4FDE6D6 /* Pods-moreTechApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.release.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18EF1B40D5CFC44B15BD2D2 /* Pods_moreTechApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F993B7F3613604F503C0E36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DC0B91627107AFC0081C091 = {
 			isa = PBXGroup;
 			children = (
 				7DC0B92127107AFC0081C091 /* moreTechApp */,
 				7DC0B92027107AFC0081C091 /* Products */,
+				CC2C2572C2BB3E4560D288DE /* Pods */,
+				6F993B7F3613604F503C0E36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = moreTechApp;
 			sourceTree = "<group>";
 		};
+		CC2C2572C2BB3E4560D288DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */,
+				97829E98C464C4B7C4FDE6D6 /* Pods-moreTechApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DC0B93327107AFD0081C091 /* Build configuration list for PBXNativeTarget "moreTechApp" */;
 			buildPhases = (
+				82B93D39B4D3CD8D95B629C5 /* [CP] Check Pods Manifest.lock */,
 				7DC0B91B27107AFC0081C091 /* Sources */,
 				7DC0B91C27107AFC0081C091 /* Frameworks */,
 				7DC0B91D27107AFC0081C091 /* Resources */,
+				6160ACAA65713D61CBD71347 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6160ACAA65713D61CBD71347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-moreTechApp/Pods-moreTechApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-moreTechApp/Pods-moreTechApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-moreTechApp/Pods-moreTechApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82B93D39B4D3CD8D95B629C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-moreTechApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DC0B91B27107AFC0081C091 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		7DC0B93427107AFD0081C091 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		7DC0B93527107AFD0081C091 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97829E98C464C4B7C4FDE6D6 /* Pods-moreTechApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
