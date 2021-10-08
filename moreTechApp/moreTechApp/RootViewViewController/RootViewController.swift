@@ -13,7 +13,6 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     var index: Int = 0
     var pageControl = UIPageControl()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +36,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         }
 
         pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
-        
+
         configurePageControl()
     }
 
@@ -54,7 +53,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
+
         if let index = controllers.firstIndex(of: viewController) {
             if index < controllers.count - 1 {
                 self.index = index
@@ -73,10 +72,10 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     func randomColor() -> UIColor {
         return UIColor(red: randomCGFloat(), green: randomCGFloat(), blue: randomCGFloat(), alpha: 1)
     }
-    
+
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 50, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = controllers.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.black
@@ -84,7 +83,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         self.pageControl.currentPageIndicatorTintColor = UIColor.black
         self.view.addSubview(pageControl)
     }
-    
+
     // MARK: Delegate functions
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
