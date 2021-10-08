@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VideoPlayerViewController.swift
 //  moreTechApp
 //
 //  Created by i.mamadaev on 08.10.2021.
@@ -11,7 +11,7 @@ import Player
 import CoreMedia
 
 
-class ViewController: UIViewController {
+class VideoPlayerViewController: UIViewController {
 
     private let player = Player()
     private let myFirstButton = UIButton()
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
 
 // MARK: - UIGestureRecognizer
 
-extension ViewController {
+extension VideoPlayerViewController {
     
     @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
         switch self.player.playbackState {
@@ -135,10 +135,16 @@ extension ViewController {
 
 // MARK: - PlayerDelegate
 
-extension ViewController: PlayerDelegate {
+extension VideoPlayerViewController: PlayerDelegate {
     
     func playerReady(_ player: Player) {
         print("\(#function) ready")
+        let timeScale = CMTimeScale(2.0)
+        let newTime: CMTime = CMTime(seconds: 5, preferredTimescale: timeScale)
+        let zeroTime: CMTime = CMTime(seconds: 0, preferredTimescale: timeScale)
+        self.player.seekToTime(to: newTime, toleranceBefore: zeroTime, toleranceAfter: zeroTime, completionHandler: nil)
+        self.player.pause()
+
     }
     
     func playerPlaybackStateDidChange(_ player: Player) {
@@ -159,7 +165,7 @@ extension ViewController: PlayerDelegate {
 
 // MARK: - PlayerPlaybackDelegate
 
-extension ViewController: PlayerPlaybackDelegate {
+extension VideoPlayerViewController: PlayerPlaybackDelegate {
     
     func playerCurrentTimeDidChange(_ player: Player) {
     }
