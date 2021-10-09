@@ -28,9 +28,10 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
 
-        controllers.append(BaloonViewController())
+        controllers.append(OnboardingViewController())
+        controllers.append(BalloonViewController())
         controllers.append(VideoPlayerViewController())
-        for _ in 2 ... 5 {
+        for _ in 1 ... 2 {
             let vc = UIViewController()
             vc.view.backgroundColor = randomColor()
             controllers.append(vc)
@@ -75,17 +76,12 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
 
     func configurePageControl() {
-        // The total number of pages that are available is based on how many available colors we have.
         pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 50, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = controllers.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = .black
         self.pageControl.pageIndicatorTintColor = .lightGray
         self.pageControl.currentPageIndicatorTintColor = .darkGray
-        
-//        self.pageControl.pageIndicatorTintColor = .lightGray
-//        self.pageControl.currentPageIndicatorTintColor = .black
-//        self.pageControl.backgroundColor = .white
         
         self.view.addSubview(pageControl)
     }
