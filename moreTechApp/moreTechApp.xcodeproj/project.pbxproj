@@ -7,26 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B5B2711895600BBF73F /* BaloonViewController.swift */; };
 		7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92227107AFC0081C091 /* AppDelegate.swift */; };
 		7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92427107AFC0081C091 /* SceneDelegate.swift */; };
-		7DC0B92727107AFC0081C091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92627107AFC0081C091 /* ViewController.swift */; };
+		7DC0B92727107AFC0081C091 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92627107AFC0081C091 /* VideoPlayerViewController.swift */; };
 		7DC0B92C27107AFD0081C091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0B92B27107AFD0081C091 /* Assets.xcassets */; };
 		7DC0B92F27107AFD0081C091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC0B92D27107AFD0081C091 /* LaunchScreen.storyboard */; };
 		7DD0D4DF2710A03600D47B7E /* VideoLinksMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0D4DE2710A03600D47B7E /* VideoLinksMock.swift */; };
+		7DD0D4E32710C53D00D47B7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0D4E22710C53D00D47B7E /* RootViewController.swift */; };
 		E18EF1B40D5CFC44B15BD2D2 /* Pods_moreTechApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moreTechApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.debug.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7D135B5B2711895600BBF73F /* BaloonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonViewController.swift; sourceTree = "<group>"; };
 		7DC0B91F27107AFC0081C091 /* moreTechApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTechApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC0B92227107AFC0081C091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC0B92427107AFC0081C091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7DC0B92627107AFC0081C091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7DC0B92627107AFC0081C091 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		7DC0B92B27107AFD0081C091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DC0B92E27107AFD0081C091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC0B93027107AFD0081C091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD0D4DE2710A03600D47B7E /* VideoLinksMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLinksMock.swift; sourceTree = "<group>"; };
+		7DD0D4E22710C53D00D47B7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		97829E98C464C4B7C4FDE6D6 /* Pods-moreTechApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.release.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +54,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D135B572710CB0600BBF73F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7DC0B92227107AFC0081C091 /* AppDelegate.swift */,
+				7DC0B92427107AFC0081C091 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7D135B582710CB7900BBF73F /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				7DC0B93027107AFD0081C091 /* Info.plist */,
+				7DC0B92D27107AFD0081C091 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		7D135B592710CB9200BBF73F /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				7DC0B92B27107AFD0081C091 /* Assets.xcassets */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
+		7D135B5A2711892800BBF73F /* BaloonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7D135B5B2711895600BBF73F /* BaloonViewController.swift */,
+			);
+			path = BaloonViewController;
+			sourceTree = "<group>";
+		};
 		7DC0B91627107AFC0081C091 = {
 			isa = PBXGroup;
 			children = (
@@ -71,15 +109,31 @@
 		7DC0B92127107AFC0081C091 /* moreTechApp */ = {
 			isa = PBXGroup;
 			children = (
-				7DC0B92227107AFC0081C091 /* AppDelegate.swift */,
-				7DC0B92427107AFC0081C091 /* SceneDelegate.swift */,
-				7DC0B92627107AFC0081C091 /* ViewController.swift */,
-				7DD0D4DE2710A03600D47B7E /* VideoLinksMock.swift */,
-				7DC0B92B27107AFD0081C091 /* Assets.xcassets */,
-				7DC0B92D27107AFD0081C091 /* LaunchScreen.storyboard */,
-				7DC0B93027107AFD0081C091 /* Info.plist */,
+				7D135B572710CB0600BBF73F /* AppDelegate */,
+				7DD0D4E42710C91E00D47B7E /* RootViewViewController */,
+				7D135B5A2711892800BBF73F /* BaloonViewController */,
+				7DD0D4E52710C92E00D47B7E /* VideoPlayerViewController */,
+				7D135B592710CB9200BBF73F /* Resourses */,
+				7D135B582710CB7900BBF73F /* Supporting files */,
 			);
 			path = moreTechApp;
+			sourceTree = "<group>";
+		};
+		7DD0D4E42710C91E00D47B7E /* RootViewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7DD0D4E22710C53D00D47B7E /* RootViewController.swift */,
+			);
+			path = RootViewViewController;
+			sourceTree = "<group>";
+		};
+		7DD0D4E52710C92E00D47B7E /* VideoPlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7DC0B92627107AFC0081C091 /* VideoPlayerViewController.swift */,
+				7DD0D4DE2710A03600D47B7E /* VideoLinksMock.swift */,
+			);
+			path = VideoPlayerViewController;
 			sourceTree = "<group>";
 		};
 		CC2C2572C2BB3E4560D288DE /* Pods */ = {
@@ -205,10 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC0B92727107AFC0081C091 /* ViewController.swift in Sources */,
+				7DD0D4E32710C53D00D47B7E /* RootViewController.swift in Sources */,
+				7DC0B92727107AFC0081C091 /* VideoPlayerViewController.swift in Sources */,
 				7DD0D4DF2710A03600D47B7E /* VideoLinksMock.swift in Sources */,
 				7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */,
 				7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */,
+				7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
