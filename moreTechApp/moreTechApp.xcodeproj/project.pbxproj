@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B5B2711895600BBF73F /* BaloonViewController.swift */; };
+		7D135B612711DFDC00BBF73F /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7D135B5F2711DFDB00BBF73F /* test2.mp4 */; };
+		7D135B622711DFDC00BBF73F /* test1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7D135B602711DFDB00BBF73F /* test1.mp4 */; };
+		7D135B732711EBEC00BBF73F /* RoundedCross.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B6F2711EBEC00BBF73F /* RoundedCross.swift */; };
+		7D135B742711EBEC00BBF73F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B702711EBEC00BBF73F /* Triangle.swift */; };
+		7D135B752711EBEC00BBF73F /* SlimRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B712711EBEC00BBF73F /* SlimRectangle.swift */; };
+		7D135B762711EBEC00BBF73F /* ConfettiSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B722711EBEC00BBF73F /* ConfettiSwiftUI.swift */; };
+		7D135B7F27121EC300BBF73F /* inflate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D135B7D27121EC300BBF73F /* inflate.mp3 */; };
+		7D135B8227121F0E00BBF73F /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D135B8127121F0E00BBF73F /* pop.mp3 */; };
 		7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92227107AFC0081C091 /* AppDelegate.swift */; };
 		7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92427107AFC0081C091 /* SceneDelegate.swift */; };
 		7DC0B92727107AFC0081C091 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92627107AFC0081C091 /* VideoPlayerViewController.swift */; };
@@ -22,6 +30,14 @@
 		0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moreTechApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.debug.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7D135B5B2711895600BBF73F /* BaloonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonViewController.swift; sourceTree = "<group>"; };
+		7D135B5F2711DFDB00BBF73F /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test2.mp4; path = Resourses/test2.mp4; sourceTree = "<group>"; };
+		7D135B602711DFDB00BBF73F /* test1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test1.mp4; path = Resourses/test1.mp4; sourceTree = "<group>"; };
+		7D135B6F2711EBEC00BBF73F /* RoundedCross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCross.swift; sourceTree = "<group>"; };
+		7D135B702711EBEC00BBF73F /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		7D135B712711EBEC00BBF73F /* SlimRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlimRectangle.swift; sourceTree = "<group>"; };
+		7D135B722711EBEC00BBF73F /* ConfettiSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiSwiftUI.swift; sourceTree = "<group>"; };
+		7D135B7D27121EC300BBF73F /* inflate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = inflate.mp3; path = Resourses/inflate.mp3; sourceTree = "<group>"; };
+		7D135B8127121F0E00BBF73F /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pop.mp3; path = Resourses/pop.mp3; sourceTree = "<group>"; };
 		7DC0B91F27107AFC0081C091 /* moreTechApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTechApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC0B92227107AFC0081C091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC0B92427107AFC0081C091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +91,10 @@
 		7D135B592710CB9200BBF73F /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				7D135B7D27121EC300BBF73F /* inflate.mp3 */,
+				7D135B8127121F0E00BBF73F /* pop.mp3 */,
+				7D135B602711DFDB00BBF73F /* test1.mp4 */,
+				7D135B5F2711DFDB00BBF73F /* test2.mp4 */,
 				7DC0B92B27107AFD0081C091 /* Assets.xcassets */,
 			);
 			name = Resourses;
@@ -86,6 +106,25 @@
 				7D135B5B2711895600BBF73F /* BaloonViewController.swift */,
 			);
 			path = BaloonViewController;
+			sourceTree = "<group>";
+		};
+		7D135B6D2711EBEC00BBF73F /* ConfettiSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7D135B6E2711EBEC00BBF73F /* Shapes */,
+				7D135B722711EBEC00BBF73F /* ConfettiSwiftUI.swift */,
+			);
+			path = ConfettiSwiftUI;
+			sourceTree = "<group>";
+		};
+		7D135B6E2711EBEC00BBF73F /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				7D135B6F2711EBEC00BBF73F /* RoundedCross.swift */,
+				7D135B702711EBEC00BBF73F /* Triangle.swift */,
+				7D135B712711EBEC00BBF73F /* SlimRectangle.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		7DC0B91627107AFC0081C091 = {
@@ -110,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7D135B572710CB0600BBF73F /* AppDelegate */,
+				7D135B6D2711EBEC00BBF73F /* ConfettiSwiftUI */,
 				7DD0D4E42710C91E00D47B7E /* RootViewViewController */,
 				7D135B5A2711892800BBF73F /* BaloonViewController */,
 				7DD0D4E52710C92E00D47B7E /* VideoPlayerViewController */,
@@ -205,8 +245,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D135B8227121F0E00BBF73F /* pop.mp3 in Resources */,
 				7DC0B92F27107AFD0081C091 /* LaunchScreen.storyboard in Resources */,
+				7D135B7F27121EC300BBF73F /* inflate.mp3 in Resources */,
+				7D135B622711DFDC00BBF73F /* test1.mp4 in Resources */,
 				7DC0B92C27107AFD0081C091 /* Assets.xcassets in Resources */,
+				7D135B612711DFDC00BBF73F /* test2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +308,11 @@
 				7DD0D4DF2710A03600D47B7E /* VideoLinksMock.swift in Sources */,
 				7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */,
 				7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */,
+				7D135B752711EBEC00BBF73F /* SlimRectangle.swift in Sources */,
 				7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */,
+				7D135B732711EBEC00BBF73F /* RoundedCross.swift in Sources */,
+				7D135B742711EBEC00BBF73F /* Triangle.swift in Sources */,
+				7D135B762711EBEC00BBF73F /* ConfettiSwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
