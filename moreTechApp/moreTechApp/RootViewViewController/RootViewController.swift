@@ -28,6 +28,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
 
+        controllers.append(BaloonViewController())
         controllers.append(VideoPlayerViewController())
         for _ in 2 ... 5 {
             let vc = UIViewController()
@@ -78,9 +79,14 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 50, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = controllers.count
         self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.white
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.pageControl.tintColor = .black
+        self.pageControl.pageIndicatorTintColor = .lightGray
+        self.pageControl.currentPageIndicatorTintColor = .darkGray
+        
+//        self.pageControl.pageIndicatorTintColor = .lightGray
+//        self.pageControl.currentPageIndicatorTintColor = .black
+//        self.pageControl.backgroundColor = .white
+        
         self.view.addSubview(pageControl)
     }
 

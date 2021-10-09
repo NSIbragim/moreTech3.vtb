@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D135B5B2711895600BBF73F /* BaloonViewController.swift */; };
 		7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92227107AFC0081C091 /* AppDelegate.swift */; };
 		7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92427107AFC0081C091 /* SceneDelegate.swift */; };
 		7DC0B92727107AFC0081C091 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0B92627107AFC0081C091 /* VideoPlayerViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0F575F8EC570D3C3174E9CB0 /* Pods_moreTechApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moreTechApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFCDEFE7556FD887F1B6CD2 /* Pods-moreTechApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moreTechApp.debug.xcconfig"; path = "Target Support Files/Pods-moreTechApp/Pods-moreTechApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7D135B5B2711895600BBF73F /* BaloonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonViewController.swift; sourceTree = "<group>"; };
 		7DC0B91F27107AFC0081C091 /* moreTechApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moreTechApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC0B92227107AFC0081C091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC0B92427107AFC0081C091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			name = Resourses;
 			sourceTree = "<group>";
 		};
+		7D135B5A2711892800BBF73F /* BaloonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7D135B5B2711895600BBF73F /* BaloonViewController.swift */,
+			);
+			path = BaloonViewController;
+			sourceTree = "<group>";
+		};
 		7DC0B91627107AFC0081C091 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 			children = (
 				7D135B572710CB0600BBF73F /* AppDelegate */,
 				7DD0D4E42710C91E00D47B7E /* RootViewViewController */,
+				7D135B5A2711892800BBF73F /* BaloonViewController */,
 				7DD0D4E52710C92E00D47B7E /* VideoPlayerViewController */,
 				7D135B592710CB9200BBF73F /* Resourses */,
 				7D135B582710CB7900BBF73F /* Supporting files */,
@@ -253,6 +264,7 @@
 				7DD0D4DF2710A03600D47B7E /* VideoLinksMock.swift in Sources */,
 				7DC0B92327107AFC0081C091 /* AppDelegate.swift in Sources */,
 				7DC0B92527107AFC0081C091 /* SceneDelegate.swift in Sources */,
+				7D135B5C2711895600BBF73F /* BaloonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
