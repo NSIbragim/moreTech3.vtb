@@ -63,7 +63,6 @@ public protocol PlayerDelegate: AnyObject {
     func player(_ player: Player, didFailWithError error: Error?)
 }
 
-
 /// Player playback protocol
 public protocol PlayerPlaybackDelegate: AnyObject {
     func playerCurrentTimeDidChange(_ player: Player)
@@ -79,7 +78,7 @@ public protocol PlayerPlaybackDelegate: AnyObject {
 open class Player: UIViewController {
 
     // types
-    
+
     /// Video fill mode options for `Player.fillMode`.
     ///
     /// - resize: Stretch to fill.
@@ -129,9 +128,9 @@ open class Player: UIViewController {
             }
         }
     }
-    
+
     // properties
-    
+
     /// Player delegate.
     open weak var playerDelegate: PlayerDelegate?
 
@@ -205,7 +204,7 @@ open class Player: UIViewController {
     open var playbackResumesWhenEnteringForeground: Bool = true
 
     // state
-    
+
     open var isPlayingVideo: Bool {
         get {
             guard let asset = self._asset else {
@@ -281,7 +280,7 @@ open class Player: UIViewController {
             }
         }
     }
-    
+
     /// Media playback's current time.
     open var currentTime: CMTime {
         get {
@@ -449,7 +448,7 @@ extension Player {
     var timeWeightedIBR: Double {
         var timeWeightedIBR = 0.0
         let totalDurationWatched = self.totalDurationWatched
-           
+
         if let accessLog = self._playerItem?.accessLog(), totalDurationWatched > 0 {
             for event in accessLog.events {
                 if event.durationWatched > 0 && event.indicatedBitrate > 0 {
@@ -465,7 +464,7 @@ extension Player {
     var stallRate: Double {
         var totalNumberOfStalls = 0
         let totalHoursWatched = self.totalDurationWatched / 3600
-        
+
         if let accessLog = self._playerItem?.accessLog(), totalDurationWatched > 0 {
             for event in accessLog.events {
                 totalNumberOfStalls += event.numberOfStalls
@@ -566,14 +565,14 @@ extension Player {
 
         let currentTime = self._playerItem?.currentTime() ?? CMTime.zero
 
-        imageGenerator.generateCGImagesAsynchronously(forTimes: [NSValue(time: currentTime)]) { (requestedTime, image, actualTime, result, error) in
+        imageGenerator.generateCGImagesAsynchronously(forTimes: [NSValue(time: currentTime)]) { (_, image, _, result, error) in
             guard let image = image else {
                 DispatchQueue.main.async {
                     completionHandler?(nil, error)
                 }
                 return
             }
-            
+
             switch result {
             case .succeeded:
                 let uiimage = UIImage(cgImage: image)
@@ -635,9 +634,9 @@ extension Player {
             guard let asset = self._asset else {
                 return
             }
-            
+
             for key in loadableKeys {
-                var error: NSError? = nil
+                var error: NSError?
                 let status = asset.statusOfValue(forKey: key, error: &error)
                 if status == .failed {
                     self.playbackState = .failed
@@ -656,7 +655,7 @@ extension Player {
                 return
             }
 
-            let playerItem = AVPlayerItem(asset:asset)
+            let playerItem = AVPlayerItem(asset: asset)
             self.setupPlayerItem(playerItem)
         })
     }
@@ -779,7 +778,7 @@ extension Player {
             return
         }
 
-        self._playerItemObservers.append(playerItem.observe(\.isPlaybackBufferEmpty, options: [.new, .old]) { [weak self] (object, change) in
+        self._playerItemObservers.append(playerItem.observe(\.isPlaybackBufferEmpty, options: [.new, .old]) { [weak self] (object, _) in
             if object.isPlaybackBufferEmpty {
                 self?.bufferingState = .delayed
             }
@@ -792,7 +791,7 @@ extension Player {
             }
         })
 
-        self._playerItemObservers.append(playerItem.observe(\.isPlaybackLikelyToKeepUp, options: [.new, .old]) { [weak self] (object, change) in
+        self._playerItemObservers.append(playerItem.observe(\.isPlaybackLikelyToKeepUp, options: [.new, .old]) { [weak self] (object, _) in
             guard let strongSelf = self else {
                 return
             }
@@ -813,7 +812,7 @@ extension Player {
             }
         })
 
-        self._playerItemObservers.append(playerItem.observe(\.loadedTimeRanges, options: [.new, .old]) { [weak self] (object, change) in
+        self._playerItemObservers.append(playerItem.observe(\.loadedTimeRanges, options: [.new, .old]) { [weak self] (object, _) in
             guard let strongSelf = self else {
                 return
             }
@@ -851,7 +850,7 @@ extension Player {
     // MARK: - AVPlayerLayerObservers
 
     internal func addPlayerLayerObservers() {
-        self._playerLayerObserver = self._playerView.playerLayer.observe(\.isReadyForDisplay, options: [.new, .old]) { [weak self] (object, change) in
+        self._playerLayerObserver = self._playerView.playerLayer.observe(\.isReadyForDisplay, options: [.new, .old]) { [weak self] (_, _) in
             self?.executeClosureOnMainQueueIfNecessary {
                 if let strongSelf = self {
                     strongSelf.playerDelegate?.playerReady(strongSelf)
@@ -868,7 +867,7 @@ extension Player {
     // MARK: - AVPlayerObservers
 
     internal func addPlayerObservers() {
-        self._playerTimeObserver = self._avplayer.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 100), queue: DispatchQueue.main, using: { [weak self] timeInterval in
+        self._playerTimeObserver = self._avplayer.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 100), queue: DispatchQueue.main, using: { [weak self] _ in
             guard let strongSelf = self else {
                 return
             }
@@ -876,7 +875,7 @@ extension Player {
         })
 
         if #available(iOS 10.0, tvOS 10.0, *) {
-            self._playerObservers.append(self._avplayer.observe(\.timeControlStatus, options: [.new, .old]) { [weak self] (object, change) in
+            self._playerObservers.append(self._avplayer.observe(\.timeControlStatus, options: [.new, .old]) { [weak self] (object, _) in
                 switch object.timeControlStatus {
                 case .paused:
                     self?.playbackState = .paused

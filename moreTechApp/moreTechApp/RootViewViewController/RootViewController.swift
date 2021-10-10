@@ -83,7 +83,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         self.pageControl.tintColor = .black
         self.pageControl.pageIndicatorTintColor = .lightGray
         self.pageControl.currentPageIndicatorTintColor = .darkGray
-        
+
         self.view.addSubview(pageControl)
     }
 

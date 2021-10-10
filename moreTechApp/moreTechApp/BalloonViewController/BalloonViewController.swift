@@ -18,7 +18,7 @@ class BalloonViewController: UIViewController {
     private let ropeImageView = UIImageView()
     private let balloonImageView = UIImageView()
     private let confettiView = ConfettiContentView()
-    
+
     // Header
     private let headerView = UIView()
     private let headerStepLabel = UILabel()
@@ -30,12 +30,11 @@ class BalloonViewController: UIViewController {
     // Footer
     private let footerView = UIView()
     private let newBalloonButton = UIButton()
-    
+
     // Reminder
     private let remindRulesView = UIView()
     private let remindRulesLabel = UILabel()
     private let rightButton = UIImageView()
-
 
     // Other Properties
     private var player: AVAudioPlayer!
@@ -44,7 +43,6 @@ class BalloonViewController: UIViewController {
     private var currentCash = 0
     private var number = 1
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,28 +52,28 @@ class BalloonViewController: UIViewController {
 
         self.view.addSubview(hintLabel)
         setupLabelUI()
-        
+
         self.view.addSubview(remindRulesView)
         setupRemindRulesViewUI()
-        
+
         self.view.addSubview(footerView)
         setupFooterUI()
-        
+
         self.view.addSubview(balloonView)
         setupBalloonUI()
     }
-    
+
     private func setupRemindRulesViewUI() {
         remindRulesView.addSubview(remindRulesLabel)
         remindRulesView.addSubview(rightButton)
-        
+
         remindRulesView.snp.makeConstraints {
             $0.bottom.left.right.equalToSuperview()
             $0.height.equalTo(126 + 52)
         }
         remindRulesView.layer.cornerRadius = 15
         remindRulesView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
-        
+
         remindRulesLabel.textColor = .black
         remindRulesLabel.text = "Напомнить правила"
         remindRulesLabel.font = UIFont.boldSystemFont(ofSize: 16)
@@ -83,21 +81,21 @@ class BalloonViewController: UIViewController {
             $0.top.equalToSuperview().offset(14)
             $0.left.equalToSuperview().offset(16)
         }
-        
+
         rightButton.image = UIImage(named: "Union.png")
         rightButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
         }
     }
-    
+
     private func setupFooterUI() {
         footerView.snp.makeConstraints {
             $0.bottom.left.right.equalToSuperview()
             $0.height.equalTo(126)
         }
         footerView.backgroundColor = UIColor(red: 11/255, green: 29/255, blue: 55/255, alpha: 1)
-        
+
         newBalloonButton.backgroundColor = .white
         newBalloonButton.addTarget(self, action: #selector(addNewBalloonPressed), for: .touchUpInside)
         newBalloonButton.layer.cornerRadius = 15
@@ -118,20 +116,20 @@ class BalloonViewController: UIViewController {
         }
         footerView.layoutSubviews()
     }
-    
+
     private func setupHeaderUI() {
         headerView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
             $0.height.equalTo(112)
         }
         headerView.backgroundColor = UIColor(red: 11/255, green: 29/255, blue: 55/255, alpha: 1)
-        
+
         headerView.addSubview(headerStepLabel)
         headerView.addSubview(headerPriceLabel)
         headerView.addSubview(headerTotalLabel)
         headerView.addSubview(headerFixLabel)
         headerView.addSubview(closeButton)
-        
+
         headerStepLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8 + 44)
             $0.left.equalToSuperview().offset(16)
@@ -140,7 +138,7 @@ class BalloonViewController: UIViewController {
         headerStepLabel.font = UIFont.systemFont(ofSize: 16)
         headerStepLabel.textColor = .white
         headerStepLabel.sizeToFit()
-        
+
         headerPriceLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8 + 44)
             $0.left.equalToSuperview().offset(161)
@@ -149,7 +147,7 @@ class BalloonViewController: UIViewController {
         headerPriceLabel.font = UIFont.systemFont(ofSize: 16)
         headerPriceLabel.textColor = .white
         headerPriceLabel.sizeToFit()
-        
+
         headerTotalLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(32 + 44)
             $0.left.equalToSuperview().offset(16)
@@ -158,7 +156,7 @@ class BalloonViewController: UIViewController {
         headerTotalLabel.font = UIFont.boldSystemFont(ofSize: 22)
         headerTotalLabel.textColor = .white
         headerTotalLabel.sizeToFit()
-        
+
         headerFixLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(32 + 44)
             $0.left.equalToSuperview().offset(161)
@@ -167,7 +165,6 @@ class BalloonViewController: UIViewController {
         headerFixLabel.font = UIFont.boldSystemFont(ofSize: 22)
         headerFixLabel.textColor = .white
         headerFixLabel.sizeToFit()
-        
 
         closeButton.image = UIImage(named: "xmark.png")
         closeButton.snp.makeConstraints {
@@ -176,13 +173,13 @@ class BalloonViewController: UIViewController {
             $0.size.width.equalTo(16)
             $0.size.height.equalTo(16)
         }
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.presentResultVC (_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector (self.presentResultVC (_:)))
         closeButton.isUserInteractionEnabled = true
         closeButton.addGestureRecognizer(gesture)
     }
-    
+
     private func setupLabelUI() {
-        
+
         hintLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
         hintLabel.textAlignment = .center
         hintLabel.textColor = .black
@@ -194,13 +191,13 @@ class BalloonViewController: UIViewController {
             $0.top.equalTo(self.headerView.snp.bottom).offset(16)
         }
     }
-    
+
     private func setupBalloonUI() {
         balloonView.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.height / 2)
         let screenMidX = self.balloonView.frame.width / 2
         let screenMidY = self.balloonView.frame.height / 2
 
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.balloonPressed (_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector (self.balloonPressed (_:)))
         self.balloonImageView.isUserInteractionEnabled = true
         self.balloonImageView.addGestureRecognizer(gesture)
         balloonImageView.frame = CGRect(x: screenMidX, y: screenMidY, width: 150, height: 162)
@@ -214,9 +211,8 @@ class BalloonViewController: UIViewController {
         self.balloonView.addSubview(balloonImageView)
         self.balloonView.addSubview(ropeImageView)
     }
-    
-    
-    @objc func balloonPressed(_ sender:UITapGestureRecognizer) {
+
+    @objc func balloonPressed(_ sender: UITapGestureRecognizer) {
         print("Baloon tapped. New size is: ", self.balloonImageView.frame.size.height + 25)
         let newHeight = self.balloonImageView.frame.size.height + 25
         let newWidth = self.balloonImageView.frame.size.width + 25
@@ -229,7 +225,7 @@ class BalloonViewController: UIViewController {
             hintLabel.sizeToFit()
             newBalloonButton.setTitle("Следющий шар", for: .normal)
             self.currentCash = 0
-            
+
             let url = Bundle.main.url(forResource: "pop", withExtension: "mp3")!
             player = try! AVAudioPlayer(contentsOf: url)
             player.play()
@@ -246,7 +242,7 @@ class BalloonViewController: UIViewController {
                 childView.removeFromParent()
                 childView.view.removeFromSuperview()
             }
-    
+
             balloonImageView.frame = CGRect(x: 0, y: 0, width: 150, height: 162)
             balloonImageView.center.x = self.balloonView.frame.width / 2
             balloonImageView.center.y = self.balloonView.frame.height / 2
@@ -270,7 +266,7 @@ class BalloonViewController: UIViewController {
         }
         self.view.layoutSubviews()
     }
-    
+
     @objc func addNewBalloonPressed() {
         hintLabel.text = "Нажмите на шар, чтобы надуть его!"
         totalCash += currentCash
@@ -286,25 +282,24 @@ class BalloonViewController: UIViewController {
         balloonImageView.image = UIImage(named: "balloon_1_b.png")
         balloonImageView.center.x = screenMidX
         balloonImageView.center.y = screenMidY
-        
+
         self.exploded = false
         self.view.layoutSubviews()
     }
 
-    @objc private func presentResultVC(_ sender:UITapGestureRecognizer) {
+    @objc private func presentResultVC(_ sender: UITapGestureRecognizer) {
         self.present(BalloonTestResultViewController(), animated: true, completion: nil)
     }
-    
+
     /// SwiftUI Confetti Animatation
     struct ConfettiContentView: View {
-        @State public var counter4:Int = 0
+        @State public var counter4: Int = 0
         var body: some View {
-            ZStack{
+            ZStack {
                 Color.white
-                ConfettiCannon(counter: $counter4, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200).onAppear(){counter4 += 1}
+                ConfettiCannon(counter: $counter4, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200).onAppear {counter4 += 1}
             }
-            
+
         }
     }
 }
-

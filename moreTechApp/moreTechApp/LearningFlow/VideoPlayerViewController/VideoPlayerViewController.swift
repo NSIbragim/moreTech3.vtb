@@ -31,7 +31,6 @@ class VideoPlayerViewController: UIViewController {
 
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-
         self.player.playerDelegate = self
         self.player.playbackDelegate = self
         self.player.volume = 0.5
@@ -84,7 +83,7 @@ class VideoPlayerViewController: UIViewController {
             $0.left.equalTo(self.view.snp.left).offset(50)
             $0.right.equalTo(self.view.snp.right).offset(-50)
         }
-        
+
         myThirdButton.frame = CGRect(x: 15, y: -50, width: 300, height: 50)
         myThirdButton.backgroundColor = .white
         myThirdButton.addTarget(self, action: #selector(next_video), for: .touchUpInside)
@@ -110,7 +109,7 @@ class VideoPlayerViewController: UIViewController {
 
     @objc func pressed() {
         let timeScale = CMTimeScale(2.0)
-        
+
         let newTime: CMTime = CMTime(seconds: 5, preferredTimescale: timeScale)
         let zeroTime: CMTime = CMTime(seconds: 0, preferredTimescale: timeScale)
 
@@ -127,7 +126,7 @@ class VideoPlayerViewController: UIViewController {
         self.player.muted = !self.player.muted
 
     }
-    
+
     @objc func next_video() {
         if flag {
             let localUrl = Bundle.main.url(forResource: "test1", withExtension: "mp4")

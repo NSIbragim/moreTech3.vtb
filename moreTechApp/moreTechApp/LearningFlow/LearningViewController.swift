@@ -18,7 +18,7 @@ class LearningViewController: UIViewController {
     private let headerSubtitleLabel = UILabel()
     private let headerLeftButton = UIImageView()
     private let headerRightButton = UIImageView()
-    
+
     // Main
     private let mainImage = UIImageView()
     private let player = Player()
@@ -33,28 +33,26 @@ class LearningViewController: UIViewController {
     private let footerTitle = UILabel()
     private let footerText = UILabel()
     private let footerLoader = FooterLoaderView()
-    
+
     private let footerResultTitle = UILabel()
     private let footerResultText = UILabel()
     private let footerBuyButton = UIButton()
     private let footerSellButton = UIButton()
     private let footerNextButton = UIImageView()
 
-
-
     // Other
     private var stepCount: Int = 0
-    
+
     // MARK: object lifecycle
     deinit {
         self.player.willMove(toParent: nil)
         self.player.view.removeFromSuperview()
         self.player.removeFromParent()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.addSubview(headerView)
         setupHeaderUI()
         self.view.addSubview(mainImage)
@@ -65,19 +63,19 @@ class LearningViewController: UIViewController {
         setupHintUI()
         // Do any additional setup after loading the view.
     }
-    
+
     private func setupHeaderUI() {
         headerView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
             $0.height.equalTo(112)
         }
         headerView.backgroundColor = UIColor(red: 11/255, green: 29/255, blue: 55/255, alpha: 1)
-        
+
         headerView.addSubview(headerTitleLabel)
         headerView.addSubview(headerSubtitleLabel)
         headerView.addSubview(headerLeftButton)
         headerView.addSubview(headerRightButton)
-        
+
         headerTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8 + 44)
             $0.left.equalToSuperview().offset(16)
@@ -86,7 +84,7 @@ class LearningViewController: UIViewController {
         headerTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         headerTitleLabel.textColor = .white
         headerTitleLabel.sizeToFit()
-        
+
         headerSubtitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(30 + 44)
             $0.left.equalToSuperview().offset(16)
@@ -103,7 +101,7 @@ class LearningViewController: UIViewController {
             $0.size.width.equalTo(16)
             $0.size.height.equalTo(16)
         }
-        
+
         headerRightButton.image = UIImage(named: "Union_b.png")
         headerRightButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(17 + 44)
@@ -113,7 +111,7 @@ class LearningViewController: UIViewController {
 //        headerLeftButton.isUserInteractionEnabled = true
 //        headerLeftButton.addGestureRecognizer(gesture)
     }
-    
+
     private func setupMainUI() {
         mainImage.image = UIImage(named: "chad.png")
         mainImage.snp.makeConstraints {
@@ -121,11 +119,11 @@ class LearningViewController: UIViewController {
             $0.top.equalTo(headerView.snp.bottom)
         }
     }
-    
+
     private func setupHintUI() {
         hintView.addSubview(hintTitle)
         hintView.addSubview(hintText)
-        
+
         hintView.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 0.85)
         hintView.snp.makeConstraints {
             $0.bottom.equalTo(footerView.snp.top).offset(-16)
@@ -134,7 +132,7 @@ class LearningViewController: UIViewController {
             $0.size.height.equalTo(122)
         }
         hintView.layer.cornerRadius = 25
-        
+
         hintTitle.snp.makeConstraints {
             $0.top.left.equalToSuperview().offset(16)
         }
@@ -142,8 +140,7 @@ class LearningViewController: UIViewController {
         hintTitle.font = UIFont.boldSystemFont(ofSize: 16)
         hintTitle.textColor = .black
         hintTitle.sizeToFit()
-        
-        
+
         hintText.snp.makeConstraints {
             $0.top.equalToSuperview().offset(46)
             $0.left.equalToSuperview().offset(16)
@@ -155,12 +152,12 @@ class LearningViewController: UIViewController {
         hintText.textColor = .black
         hintText.sizeToFit()
     }
-    
+
     private func setupFooterUI() {
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.nextStep (_:)))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector (self.nextStep (_:)))
         footerView.isUserInteractionEnabled = true
         footerView.addGestureRecognizer(gesture)
-        
+
         footerView.addSubview(footerTitle)
         footerView.addSubview(footerText)
         footerView.addSubview(footerLoader)
@@ -175,7 +172,7 @@ class LearningViewController: UIViewController {
             $0.height.equalTo(146)
         }
         footerView.backgroundColor = UIColor(red: 11/255, green: 29/255, blue: 55/255, alpha: 1)
-        
+
         footerTitle.snp.makeConstraints {
             $0.top.equalToSuperview().offset(40)
             $0.centerX.equalToSuperview()
@@ -184,7 +181,7 @@ class LearningViewController: UIViewController {
         footerTitle.font = UIFont.systemFont(ofSize: 16)
         footerTitle.textColor = .lightGray
         footerTitle.sizeToFit()
-        
+
         footerText.snp.makeConstraints {
             $0.top.equalToSuperview().offset(64)
             $0.centerX.equalToSuperview()
@@ -193,16 +190,16 @@ class LearningViewController: UIViewController {
         footerText.font = UIFont.boldSystemFont(ofSize: 22)
         footerText.textColor = .white
         footerText.sizeToFit()
-        
+
         footerLoader.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(16)
         }
-        
+
         footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
         footerLoader.setProgress(progress: 1.0)
-        
+
         footerResultTitle.snp.makeConstraints {
             $0.top.equalToSuperview().offset(40)
             $0.left.equalToSuperview().offset(144)
@@ -211,7 +208,7 @@ class LearningViewController: UIViewController {
         footerResultTitle.font = UIFont.systemFont(ofSize: 16)
         footerResultTitle.textColor = .lightGray
         footerResultTitle.sizeToFit()
-        
+
         footerResultText.snp.makeConstraints {
             $0.top.equalToSuperview().offset(64)
             $0.left.equalToSuperview().offset(144)
@@ -220,11 +217,10 @@ class LearningViewController: UIViewController {
         footerResultText.font = UIFont.boldSystemFont(ofSize: 22)
         footerResultText.textColor = .white
         footerResultText.sizeToFit()
-        
+
         footerResultTitle.isHidden = true
         footerResultText.isHidden = true
-        
-        
+
         footerBuyButton.backgroundColor = .white
         footerBuyButton.layer.cornerRadius = 15
         footerBuyButton.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
@@ -235,8 +231,7 @@ class LearningViewController: UIViewController {
         footerBuyButton.layer.borderColor = UIColor.black.cgColor
         footerBuyButton.layer.borderWidth = 1
         footerBuyButton.frame = CGRect(x: 16, y: 36, width: 174, height: 60)
-        
-        
+
         footerSellButton.backgroundColor = .white
         footerSellButton.layer.cornerRadius = 15
         footerSellButton.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
@@ -249,7 +244,7 @@ class LearningViewController: UIViewController {
         footerSellButton.frame = CGRect(x: 204, y: 36, width: 174, height: 60)
         footerBuyButton.isHidden = true
         footerSellButton.isHidden = true
-        
+
         footerNextButton.image = UIImage(named: "nextButton.png")
         footerNextButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(46)
@@ -258,12 +253,10 @@ class LearningViewController: UIViewController {
             $0.size.width.equalTo(45)
         }
         footerNextButton.isHidden = true
-        
-        
-        
+
     }
-    
-    @objc private func nextStep(_ sender:UITapGestureRecognizer) {
+
+    @objc private func nextStep(_ sender: UITapGestureRecognizer) {
         if stepCount == 0 {
             footerNextButton.isHidden = true
 
@@ -287,7 +280,7 @@ class LearningViewController: UIViewController {
 
             self.view.bringSubviewToFront(footerView)
             self.view.bringSubviewToFront(headerView)
-            
+
             footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
             footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 1 {
@@ -390,7 +383,7 @@ class LearningViewController: UIViewController {
             mainImage.snp.updateConstraints {
                 $0.top.equalTo(headerView.snp.bottom)
             }
-            
+
             footerTitle.snp.makeConstraints {
                 $0.left.equalToSuperview().offset(16)
             }
@@ -416,9 +409,9 @@ class LearningViewController: UIViewController {
             footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
             footerLoader.setProgress(progress: 1.0)
         }
-        
+
         stepCount += 1
-        
+
     }
 
 }
@@ -453,7 +446,7 @@ extension LearningViewController: PlayerDelegate {
     func playerReady(_ player: Player) {
         print("\(#function) ready")
         self.player.pause()
-        
+
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.player.view.addGestureRecognizer(tapGestureRecognizer)
