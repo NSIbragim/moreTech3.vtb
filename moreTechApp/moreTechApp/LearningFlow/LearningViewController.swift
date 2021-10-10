@@ -258,7 +258,6 @@ class LearningViewController: UIViewController {
             footerNextButton.isHidden = true
 
             footerText.text = "Новость про сбой везде"
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
             self.player.playerDelegate = self
             self.player.playbackDelegate = self
             self.player.volume = 0.5
@@ -275,11 +274,7 @@ class LearningViewController: UIViewController {
 
             self.view.bringSubviewToFront(footerView)
             self.view.bringSubviewToFront(headerView)
-
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 1 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
             footerNextButton.isHidden = false
 
             self.player.stop()
@@ -295,9 +290,9 @@ class LearningViewController: UIViewController {
             }
             mainImage.image = UIImage(named: "res1.png")
             footerText.text = "Акции падают"
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 2 {
+            footerNextButton.isHidden = true
+
             footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
             mainImage.image = UIImage(named: "res2.png")
             footerNextButton.isHidden = true
@@ -309,7 +304,6 @@ class LearningViewController: UIViewController {
             footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 3 {
             footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
-            footerNextButton.isHidden = false
             footerBuyButton.isHidden = true
             footerSellButton.isHidden = true
             mainImage.image = UIImage(named: "res3.png")
@@ -320,48 +314,29 @@ class LearningViewController: UIViewController {
             footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
             footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 4 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
-            footerNextButton.isHidden = false
             mainImage.image = UIImage(named: "res4.png")
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 5 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
 
             mainImage.image = UIImage(named: "res5.png")
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
+            
         } else if stepCount == 6 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
 
             mainImage.image = UIImage(named: "res6.png")
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 7 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
 
             mainImage.image = UIImage(named: "res7.png")
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
+
         } else if stepCount == 8 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
 
             mainImage.image = UIImage(named: "res8.png")
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 9 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
-            footerNextButton.isHidden = true
 
             mainImage.image = UIImage(named: "res9.png")
             mainImage.snp.makeConstraints {
                 $0.bottom.equalTo(footerView.snp.top).offset(35)
             }
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         } else if stepCount == 10 {
-            footerLoader.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: 0, height: 4)
-            footerNextButton.isHidden = true
+            footerNextButton.isHidden = false
 
             footerText.isHidden = false
             footerText.text = "Продажа"
@@ -398,11 +373,8 @@ class LearningViewController: UIViewController {
                 $0.left.equalToSuperview().offset(144)
             }
             footerResultText.sizeToFit()
-            footerNextButton.removeFromSuperview()
             footerResultTitle.isHidden = false
             footerResultText.isHidden = false
-            footerLoader.frame = CGRect(x: 0, y: 0, width: 360, height: 4)
-            footerLoader.setProgress(progress: 1.0)
         }
 
         stepCount += 1

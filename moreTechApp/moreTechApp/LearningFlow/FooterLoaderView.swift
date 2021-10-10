@@ -31,7 +31,7 @@ class FooterLoaderView: UIView {
     public func setProgress(progress: CGFloat) {
         let progressWidth = progress * self.frame.width
 
-        UIView.animate(withDuration: 4) {
+        UIView.animate(withDuration: 15) {
             self.backgroundIndicateView.frame = CGRect(x: 0, y: 0, width: progressWidth, height: self.frame.height)
 
         }

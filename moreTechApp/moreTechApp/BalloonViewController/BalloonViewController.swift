@@ -219,7 +219,7 @@ class BalloonViewController: UIViewController {
         if exploded {
             newBalloonButton.setTitle("Фиксировать", for: .normal)
             return
-        } else if balloonImageView.frame.height + 25 >= 300 {
+        } else if balloonImageView.frame.height + 25 >= 240 {
             hintLabel.text = "Буууммм!"
             headerFixLabel.text = "0 ₽"
             hintLabel.sizeToFit()
@@ -282,6 +282,8 @@ class BalloonViewController: UIViewController {
         balloonImageView.image = UIImage(named: "balloon_1_b.png")
         balloonImageView.center.x = screenMidX
         balloonImageView.center.y = screenMidY
+        newBalloonButton.setTitle("Фиксировать", for: .normal)
+
 
         self.exploded = false
         self.view.layoutSubviews()
