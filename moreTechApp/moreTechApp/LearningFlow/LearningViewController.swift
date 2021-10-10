@@ -107,9 +107,6 @@ class LearningViewController: UIViewController {
             $0.top.equalToSuperview().offset(17 + 44)
             $0.left.equalTo(headerTitleLabel.snp.right).offset(8)
         }
-//        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.presentResultVC (_:)))
-//        headerLeftButton.isUserInteractionEnabled = true
-//        headerLeftButton.addGestureRecognizer(gesture)
     }
 
     private func setupMainUI() {
@@ -271,8 +268,6 @@ class LearningViewController: UIViewController {
             self.view.addSubview(self.player.view)
             self.player.didMove(toParent: self)
 
-    //        self.player.url = videoUrl
-            // videoUrl localUrl
             let localUrl = Bundle.main.url(forResource: "test2", withExtension: "mp4")
             self.player.url = localUrl
 

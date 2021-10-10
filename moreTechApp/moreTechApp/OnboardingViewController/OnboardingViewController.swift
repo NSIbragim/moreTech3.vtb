@@ -49,9 +49,6 @@ class OnboardingViewController: UIViewController {
     }
 
     private func setupUI() {
-//        let screenMidX = self.view.frame.width / 2
-//        let screenMidY = self.view.frame.height / 2
-
         view.backgroundColor = UIColor(red: 49/255, green: 111/255, blue: 204/255, alpha: 1)
         view.addSubview(iconImageView)
         view.addSubview(titleLabel)
@@ -88,8 +85,6 @@ class OnboardingViewController: UIViewController {
             $0.height.equalTo(Constants.loaderHeight)
         }
         loaderView.setupLoaders()
-
-        // В конце
         changeOnboardingStep()
     }
 

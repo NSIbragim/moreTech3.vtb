@@ -31,12 +31,6 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         controllers.append(LearningViewController())
         controllers.append(OnboardingViewController())
         controllers.append(BalloonViewController())
-        controllers.append(VideoPlayerViewController())
-        for _ in 1 ... 2 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = randomColor()
-            controllers.append(vc)
-        }
 
         pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
 

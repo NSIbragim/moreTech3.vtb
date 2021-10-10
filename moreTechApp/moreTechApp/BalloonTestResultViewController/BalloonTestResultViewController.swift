@@ -24,7 +24,6 @@ class BalloonTestResultViewController: UIViewController {
         view.addSubview(hintLabel)
         view.addSubview(newBalloonButton)
         setupUI()
-        // Do any additional setup after loading the view.
     }
 
     private func setupUI() {

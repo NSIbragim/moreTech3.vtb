@@ -40,8 +40,6 @@ class VideoPlayerViewController: UIViewController {
         self.view.addSubview(self.player.view)
         self.player.didMove(toParent: self)
 
-//        self.player.url = videoUrl
-        // videoUrl localUrl
         let localUrl = Bundle.main.url(forResource: "test2", withExtension: "mp4")
         self.player.url = localUrl
 
