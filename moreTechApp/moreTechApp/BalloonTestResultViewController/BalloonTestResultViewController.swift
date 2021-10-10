@@ -61,6 +61,8 @@ class BalloonTestResultViewController: UIViewController {
         newBalloonButton.backgroundColor = UIColor(red: 58/255, green: 131/255, blue: 241/255, alpha: 1)
         newBalloonButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         newBalloonButton.setTitle("Инвестировать", for: .normal)
+        newBalloonButton.addTarget(self, action: #selector(addNewBalloonPressed), for: .touchUpInside)
+
         newBalloonButton.sizeToFit()
         newBalloonButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -73,6 +75,9 @@ class BalloonTestResultViewController: UIViewController {
     }
     
     @objc private func addNewBalloonPressed(_ sender:UITapGestureRecognizer) {
-        self.dismiss(animated: true, completion: nil)
+        if let url = URL(string: "https://apps.apple.com/ru/app/%D0%B2%D1%82%D0%B1-%D0%BC%D0%BE%D0%B8-%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%B8/id1364026756") {
+            UIApplication.shared.open(url)
+        }
+
     }
 }

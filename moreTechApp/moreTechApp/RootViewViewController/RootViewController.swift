@@ -28,6 +28,7 @@ class RootViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
 
+        controllers.append(LearningViewController())
         controllers.append(OnboardingViewController())
         controllers.append(BalloonViewController())
         controllers.append(VideoPlayerViewController())
